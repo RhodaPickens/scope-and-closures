@@ -9,14 +9,36 @@ console.log(rudePerson("how are you")); // prints "how what are what you"
 console.log(rudePerson("I like pie")); // prints "I what like what pie"
 
 
-Invoking the interrupter function again: 
+Invoking the interrupter function again:
 let rudePerson2 = interrupter("yo"); // => returns a function
 console.log(rudePerson2("I love dogs")); // prints "I yo love yo dogs"
 
 
 ***********************************************************************/
+// needs original string (as which parameter?)
+// split string into array, iterate thru, plug word in after each word
+// return new array as string with interruptions
 
-// your code here!
+function interrupter(interruptingWord) {
+
+  return function(str) {            // return inner function to add interrupting word and accept string as parameter
+    let words = str.split(' ');     // split string to array
+    let newWords = [];                // initialize new array
+
+    for (let i = 0; i < words.length; i++) {    // iterate through array of words
+      let word = words[i];
+      newWords.push(word);          // add current word to new array
+
+      if (i < words.length - 1) {       // add interrupting word afterwards, but only if not at the end of the string
+        newWords.push(interruptingWord);
+      }
+    };
+    return newWords.join(' ');        // return new array as string
+  };
+
+}
+
+
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 

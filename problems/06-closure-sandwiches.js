@@ -22,14 +22,13 @@ console.log(sandwich);
 
 
 function sandwichMaker() {
-  let ingredients = "One sandwich with tomato";
-
-  function addIngredient(ingredient) {
-      ingredients += " and " + ingredient;
-      return ingredients;
+  let ingredients = "One sandwich with tomato";           // initialize ingredients
+                                                          // store in outer function so ingredient list persists between runs of inner function
+    function addIngredient(ingredient) {                    // inner function which accepts ingredient as a parameter
+      ingredients += " and " + ingredient;                // add the ingredient to the variable stored in the outer function
+      return ingredients;                                 // return the full ingredients variable from the outer function
     }
-
-  return addIngredient;
+  return addIngredient;                                   // return inner function
 };
 
 
