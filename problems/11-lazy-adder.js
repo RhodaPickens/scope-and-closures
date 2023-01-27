@@ -6,9 +6,9 @@ When the last mentioned function is invoked with a number, (thirdNum), it will
 FINALLY return a number. See below for examples!
 
 Example 1:
-let firstAdd = lazyAdder(1);
-let secondAdd = firstAdd(2);
-let sum = secondAdd(3);
+let firstAdd = lazyAdder(1); // outer function runs
+let secondAdd = firstAdd(2); // inner function runs
+let sum = secondAdd(3); // inner inner function runs
 console.log(sum); // prints 6
 
 Example 2:
@@ -20,9 +20,25 @@ console.log(total); // prints 33
 AFTER YOU ARE FINISHED WITH THIS PROBLEM, ASK FOR A CODE REVIEW
 - Explain, but don't code, how you would turn your solution into a one-line
   fat-arrow function
+  - Since the return is implicit with arrow functions, I could write the name of the function, parameter, fat arrow
+  and then the single statement without curly braces for each function, leading to the next.
 ***********************************************************************/
 
-// your code here
+
+let lazyAdder = firstNum => {
+  let sum = firstNum;
+
+  return function (secondNum) {
+    sum += secondNum;
+
+    return function (thirdNum) {
+      sum += thirdNum;
+      return sum;
+    };
+  };
+};
+
+
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 
