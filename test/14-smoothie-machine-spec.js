@@ -30,5 +30,6 @@ describe("smoothieMachine()", function () {
     assert.equal(test1, result1);
     assert.equal(test2, result2);
     assert.equal(test3, result3);
+    assert.equal(test4, result4);
   });
 });
