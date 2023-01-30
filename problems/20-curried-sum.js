@@ -42,7 +42,24 @@ AFTER YOU ARE FINISHED WITH THIS PROBLEM, ASK FOR A CODE REVIEW
   be useful
 ***********************************************************************/
 
-// your code here
+let curriedSum = numArgs => {
+  let numbers = [];
+
+  return nextInput = num => {
+    numbers.push(num);                      // append number to array
+
+    if (numbers.length === numArgs) {       // if specified number of inputs has been reached then return sum
+      const total = numbers.reduce(function(accum, n) {
+        return accum + n;
+      });
+      return total;
+    }
+    else {
+      return nextInput;                     // return function if it hasn't finished executing
+    }
+  }
+}
+
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 
