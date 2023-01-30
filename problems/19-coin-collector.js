@@ -25,7 +25,19 @@ Example 3:
 
 ***********************************************************************/
 
-// your code here
+
+let coinCollector = numCoins => {
+  let collected = [];       // array to collect values of coins
+
+  return coin => {
+    numCoins--;             // deprecate number of coins till 0
+    collected.push(coin);   // push coin value to array
+    if (numCoins === 0) {   // return array once numCoins reaches zero
+      return collected;
+    }
+  }
+}
+
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 

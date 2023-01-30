@@ -15,7 +15,19 @@ console.log(fame(["a", "f", "z", "b"])); // returns [ 'f', 'a' ]
 
 *******************************************************************************/
 
-// your code here
+
+let plannedIntersect = firstArr => {
+
+  return secondArr => {
+     let matching = secondArr.filter(function(el) {     // iterate through second array with filter method
+      return firstArr.indexOf(el) !== -1;               // put elements in a new array that also exist in first array
+     });
+     return matching;
+  };
+
+};
+
+
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*************************/
 
