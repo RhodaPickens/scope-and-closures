@@ -15,9 +15,7 @@ console.log(rudePerson2("I love dogs")); // prints "I yo love yo dogs"
 
 
 ***********************************************************************/
-// needs original string (as which parameter?)
-// split string into array, iterate thru, plug word in after each word
-// return new array as string with interruptions
+
 
 function interrupter(interruptingWord) {
 
